@@ -218,7 +218,7 @@ export default function UploadPage() {
 
     try {
       await new Promise((r) => setTimeout(r, 2500)); // giả delay
-      const res = await fetch("http://localhost:8000/predict", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/predict`, {
         method: "POST",
         body: formData,
       });
